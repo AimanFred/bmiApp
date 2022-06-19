@@ -13,20 +13,27 @@ default: &default
   adapter: mysql2
   encoding: utf8mb4
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root
-  password:
+  username: asif_schinkels
+  password: asifpwd@1234
   socket: /var/run/mysqld/mysqld.sock
 
 development:
   <<: *default
-  database: bmiapp_development
+  database: dbapp_development
+#  host: localhost
+#  username: root
+#  password: farid
+  database: dangabay
+  host: rds-dangabay-mysql80.crlozpzigni5.ap-southeast-1.rds.amazonaws.com
 
 # Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
+# re-generated from your development database when you run "rake".  
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: bmiapp_test
+  database: 
+  username: 
+  password: 
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -50,6 +57,6 @@ test:
 #
 production:
   <<: *default
-  database: bmiapp_production
-  username: bmiapp
-  password: <%= ENV["BMIAPP_DATABASE_PASSWORD"] %>
+  database: 
+  username: 
+  password: 
