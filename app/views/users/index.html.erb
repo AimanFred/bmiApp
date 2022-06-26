@@ -1,0 +1,53 @@
+<! -- Module Name: 
+   webpage index file 
+
+   Created By: Farid faridaiman@schinkels.com.my 
+   Created: 18/6/2022 
+   Framework: Rails 7.0.3 on dangabay
+   Last Edited: 22/6/2022 -->
+
+
+<! -- webpage head -->
+<head>
+
+  <! -- include stylesheets.css -->
+  <%= stylesheet_link_tag "stylesheets" %>
+
+  <title>bmiApp</title>
+
+</head>
+
+<h2>User BMI Data</h2>
+
+<! -- class to style table -->
+<div class="table-wrapper">
+
+    <! -- style users table -->
+    <table class="fl-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>age</th>
+            <th>weight</th>
+            <th>height</th>
+            <th>bmi</th>
+            <th>report</th>
+          </tr>
+        </thead>
+        <tbody>
+
+        <! -- display users data from tbl_asif_bmi -->
+        <% @users.each do |user| %>
+          <tr>
+            <td><%= link_to user.name, user %></td>         
+            <td><%= user.age %></td>
+            <td><%= user.weight %></td>
+            <td><%= user.height %></td>
+            <td><%= user.bmi %></td>
+            <td><%= user.report %></td>
+          </tr>
+        <% end %>
+
+        <tbody>
+    </table>
+</div>

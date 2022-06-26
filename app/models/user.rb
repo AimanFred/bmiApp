@@ -1,5 +1,5 @@
 """ Module Name: 
-   Rails route file 
+   User model file 
 
    Created By: Farid faridaiman@schinkels.com.my 
    Created: 18/6/2022 
@@ -8,12 +8,7 @@
 
    Reason Edited: clean up code
 """
-
-Rails.application.routes.draw do
-  
-  # Defines all path for users controller
-  resources :users
-
-  # Defines the root path route ("/")
-  root "users#index"
+class User < ApplicationRecord
+    # Explicitly declare User model to use dangabay.tbl_asif_bmi table
+     self.table_name = "dangabay.tbl_asif_bmi"
 end
